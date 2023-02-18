@@ -201,10 +201,14 @@ DISKR:	;READ DISK FILE RECORD
 ;
 ;	FIXED MESSAGE AREA
 SIGNON:	DB	'FILE DUMP VERSION 1.4$'
-OPNMSG:	DB	CR,ееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееееее
+OPNMSG:	DB	CR,LF,'NO INPUT FILE PRESENT ON DISK$'
+
+;	VARIABLE AREA
+IBP:	DS	2	;INPUT BUFFER POINTER
+OLDSP:	DS	2	;ENTRY SP VALUE FROM CCP
+;
 ;	STACK AREA
 	DS	64	;RESERVE 32 LEVEL STACK
 STKTOP:
 ;
 	END
-
